@@ -1,0 +1,8 @@
+\setenv PAGER 'less -S'
+\pset linestyle unicode
+\pset border 2
+\timing
+
+-- (transaction status) db_user@host:port/db_name (command status) (superuser status)
+\set PROMPT1 '%[%033[33;1m%]%x%[%033[38;5;224m%]%n@%M:%>/%[%033[1m%]%/%[%033[0m%]%R%# '
+\set PG_COLOR always
