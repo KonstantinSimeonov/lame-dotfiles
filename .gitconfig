@@ -1,0 +1,19 @@
+[user]
+    name = Konstantin Simeonov
+    email = kon.simeonov@protonmail.com
+[gpg]
+    program = gpg2
+[diff]
+    tool = vimdiff3
+[difftool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE
+[difftool "vimdiff3"]
+    path = nvim
+[merge]
+    tool = vimdiff3
+[mergetool "vimdiff3"]
+    path = nvim
+[init]
+    defaultBranch = master
+[commit]
+    gpgsign = true
