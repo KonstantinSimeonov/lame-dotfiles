@@ -1,9 +1,15 @@
+# make history useable
+shopt -s histappend
+# multiline commands are one entry
+shopt -s cmdhist
+export HISTCONTROL="erasedups:ignoreboth"
+
 alias vim=nvim
 alias ls='ls --color=auto -a'
-
 export EDITOR=nvim
-export PGHOST=/tmp
+
 export PATH="$PATH:~/.local/bin/:~/scripts:~/.corepack-bin:~/.cargo/bin"
+export PGHOST=/tmp
 
 # gpg signing
 export GPG_TTY=$(tty)
@@ -13,14 +19,12 @@ export GPG_TTY=$(tty)
 
 dbus-update-activation-environment --all
 
-# prompt colors
 GREEN="\[\033[0;32m\]"
 CYAN="\[\033[0;36m\]"
 RED="\[\033[0;31m\]"
 LIGHT_PURPLE="\[\033[1;35m\]"
 YELLOW="\[\033[1;33m\]"
 RESTORE="\[\033[0m\]"
-
 function __prompt() {
   code=$?
   if [[ $code != "0" ]]
@@ -39,3 +43,4 @@ function __prompt() {
 PROMPT_COMMAND=__prompt
 
 source /usr/share/nvm/init-nvm.sh
+export AWS_PROFILE=admin
