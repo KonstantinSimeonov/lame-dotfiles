@@ -14,6 +14,9 @@ export PGHOST=/tmp
 # gpg signing
 export GPG_TTY=$(tty)
 
+# running a lot of watchers for builds/compilation
+ulimit -n 65536
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
