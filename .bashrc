@@ -20,8 +20,6 @@ ulimit -n 65536
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-dbus-update-activation-environment --all
-
 GREEN="\[\033[0;32m\]"
 CYAN="\[\033[0;36m\]"
 RED="\[\033[0;31m\]"
