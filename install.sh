@@ -24,4 +24,7 @@ for f in src/.*; do
   ln -s "$from" "$to"
 done
 
+mkdir -p ~/.config/zellij
+ln -s "$dir/config.kdl" ~/.config/zellij/config.kdl
+
 echo "done"

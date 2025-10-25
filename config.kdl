@@ -18,11 +18,8 @@ themes {
 
 theme "panda"
 
-copy_on_select false
-
 keybinds clear-defaults=true {
     normal {
-        bind "Alt c" { Copy; }
         bind "F5" { Clear; }
     }
     locked {
@@ -97,8 +94,6 @@ keybinds clear-defaults=true {
         bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
     }
     search {
         bind "Ctrl s" { SwitchToMode "Normal"; }
