@@ -18,12 +18,21 @@ function __prompt() {
   local branch
   branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
+  if [ -n "$branch" ]; then
+    local files added removed diffstat
+    read -r files added removed < <(git diff --shortstat 2>/dev/null | grep -Eo '\d+' | tr '\n' ' ')
+    if [ -n "$files" ]; then
+      diffstat="$restore$files $green+$added $red-$removed$restore"
+    fi
+  fi
+
   local node_version
   node_version=$(node -v 2> /dev/null)
 
   local prompt="[$cyan\w$restore]"
   declare -a items=(
     "${branch:+$yellow$branch$restore}" # git branch
+    "${diffstat:+($diffstat)}"
     "$light_purple${node_version/v/node}$restore" # node version
     "${AWS_PROFILE:+aws:$AWS_PROFILE}"
     # line 2
@@ -37,7 +46,6 @@ function __prompt() {
       prompt="$prompt $item"
     fi
   done
-
   export PS1="$prompt"
 }
 
