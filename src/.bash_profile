@@ -2,10 +2,11 @@ alias vim=nvim
 alias ls='ls --color=auto -a'
 export EDITOR=nvim
 
-export PATH="$PATH:~/.local/bin/:~/scripts:~/.corepack-bin:~/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin/:$HOME/scripts:$HOME/.cargo/bin"
 export PGHOST=/tmp
 
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # running a lot of watchers for builds/compilation
 ulimit -n 65536
