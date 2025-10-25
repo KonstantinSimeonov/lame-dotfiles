@@ -1,11 +1,11 @@
-green="\[\033[0;32m\]"
-cyan="\[\033[0;36m\]"
-red="\[\033[0;31m\]"
-light_purple="\[\033[1;35m\]"
-yellow="\[\033[1;33m\]"
-restore="\[\033[0m\]"
-
 function __prompt() {
+  local green="\[\033[0;32m\]"
+  local cyan="\[\033[0;36m\]"
+  local red="\[\033[0;31m\]"
+  local light_purple="\[\033[1;35m\]"
+  local yellow="\[\033[1;33m\]"
+  local restore="\[\033[0m\]"
+
   local code=$?
   if [[ $code != "0" ]]; then
     emoji=💩💩💩
@@ -37,4 +37,4 @@ function __prompt() {
   export PS1="${items[*]}"
 }
 
-export PROMPT_COMMAND=__prompt
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND;}__prompt"
