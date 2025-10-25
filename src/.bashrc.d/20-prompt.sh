@@ -21,20 +21,24 @@ function __prompt() {
   local node_version
   node_version=$(node -v 2> /dev/null)
 
+  local prompt="[$cyan\w$restore]"
   declare -a items=(
-    # line 1
-    "[$cyan\w$restore]" # pwd
-    "$yellow$branch" # git branch
-    "$light_purple${node_version/v/node}" # node version
-    "$restore"
+    "${branch:+$yellow$branch$restore}" # git branch
+    "$light_purple${node_version/v/node}$restore" # node version
+    "${AWS_PROFILE:+aws:$AWS_PROFILE}"
     # line 2
-    "\n"
-    "$emoji" # spazz out a bit
+    "\n$emoji" # spazz out a bit
     "$color\u@\h>" # user host
     "$restore"
   )
 
-  export PS1="${items[*]}"
+  for item in "${items[@]}"; do
+    if [ -n "$item" ]; then
+      prompt="$prompt $item"
+    fi
+  done
+
+  export PS1="$prompt"
 }
 
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND;}__prompt"
