@@ -9,6 +9,8 @@ export GPG_TTY
 # running a lot of watchers for builds/compilation
 ulimit -n 65536
 
+# shellcheck source=/dev/null
 source /usr/share/nvm/init-nvm.sh
 
+# shellcheck source=src/.bashrc
 [[ $- == *i* ]] && source ~/.bashrc

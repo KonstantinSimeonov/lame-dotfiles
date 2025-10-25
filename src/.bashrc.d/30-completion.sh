@@ -1,6 +1,8 @@
 if [ -f /usr/share/bash-completion/bash_completion ]; then
+  # shellcheck source=/dev/null
   source /usr/share/bash-completion/bash_completion
 elif [ -f /etc/bash_completion ]; then
+  # shellcheck source=/dev/null
   source /etc/bash_completion
 fi
 
@@ -18,6 +20,7 @@ cached_completion() {
       $cache_cmd > "$cache_file"
     fi
 
+    # shellcheck source=/dev/null
     source "$cache_file"
   fi
 }

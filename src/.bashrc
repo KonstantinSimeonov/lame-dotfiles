@@ -2,11 +2,11 @@
 [[ $- != *i* ]] && return
 
 for file in "$HOME/.bashrc.d/"*.sh; do
-  if [ -f "$file" ]; then
-    source "$file"
-  fi
+  # shellcheck source=/dev/null
+  source "$file"
 done
 
 if [ -f ~/.env ]; then
+  # shellcheck source=/dev/null
   . ~/.env
 fi
