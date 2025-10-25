@@ -31,6 +31,7 @@ install_zellij_config() {
   mkdir -p "$zellij_config_dir"
   rm -f "$zellij_config_dir/$zellij_config"
   ln -s "$dir/$zellij_config" "$zellij_config_dir/$zellij_config"
+  ln -s "$dir/zellij-copy.sh" "$HOME/.local/bin/zellij-copy"
 }
 
 install_dotfiles

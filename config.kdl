@@ -1,4 +1,4 @@
-copy_command "xclip -selection clipboard" // x11
+copy_command "zellij-copy"
 
 themes {
     panda {
