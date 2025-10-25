@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-read -r -p "replace existing dotfiles (.bashrc, .psqlrc, .gitconfig) with symlinks? [y/N] " answer
+read -r -p "replace existing dotfiles with symlinks? [y/N] " answer
 
 case $answer in
   [yY])
