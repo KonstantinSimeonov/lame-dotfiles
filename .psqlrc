@@ -1,6 +1,7 @@
 \setenv PAGER 'less -S'
 \pset linestyle unicode
 \pset border 2
+\pset format aligned
 \timing
 
 -- (transaction status) db_user@host:port/db_name (command status) (superuser status)
