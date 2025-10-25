@@ -1,7 +1,7 @@
 export EDITOR=nvim
 
 mkdir -p "$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/bin/:$HOME/scripts:$HOME/.cargo/bin:/opt/homebrew/bin"
+export PATH="/opt/homebrew/bin:$PATH:$HOME/.local/bin/:$HOME/scripts:$HOME/.cargo/bin"
 export PGHOST=/tmp
 
 GPG_TTY=$(tty)

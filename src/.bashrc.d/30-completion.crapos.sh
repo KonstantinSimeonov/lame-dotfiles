@@ -1,3 +1,12 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+if [ -f /opt/homebrew/etc/profile.d/bash_completion.sh ]; then
+  . /opt/homebrew/etc/profile.d/bash_completion.sh
+elif [ -f /usr/local/etc/profile.d/bash_completion.sh ]; then
+  . /usr/local/etc/profile.d/bash_completion.sh
+fi
+
 for compl in /opt/homebrew/etc/bash_completion.d/*; do
   if [[ "$compl" != "/opt/homebrew/etc/bash_completion.d/000_bash_completion_compat.bash" ]]; then
     # shellcheck source=/dev/null
