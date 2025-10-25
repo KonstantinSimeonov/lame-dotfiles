@@ -12,4 +12,6 @@ export GPG_TTY=$(tty)
 # running a lot of watchers for builds/compilation
 ulimit -n 65536
 
+source /usr/share/nvm/init-nvm.sh
+
 [[ $- == *i* ]] && source ~/.bashrc

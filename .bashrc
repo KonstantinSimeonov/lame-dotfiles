@@ -30,8 +30,6 @@ function __prompt() {
 
 PROMPT_COMMAND=__prompt
 
-source /usr/share/nvm/init-nvm.sh
-
 complete -C /usr/bin/terraform terraform
 
 if [ -f ~/.env ]; then
