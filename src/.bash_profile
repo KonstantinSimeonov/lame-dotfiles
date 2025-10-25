@@ -1,5 +1,3 @@
-alias vim=nvim
-alias ls='ls --color=auto -a'
 export EDITOR=nvim
 
 export PATH="$PATH:$HOME/.local/bin/:$HOME/scripts:$HOME/.cargo/bin"
