@@ -19,7 +19,10 @@ dir="$(readlink -e "$(dirname "$0")")"
 declare -a files=(.bashrc .psqlrc .gitconfig)
 
 for f in "${files[@]}"; do
-  ln -s "$dir/$f" "$HOME/$f"
+  from="$dir/$f"
+  to="$HOME/$f"
+  echo "symlinking $from to $to"
+  ln -s  "$from" "$to"
 done
 
 echo "done"
