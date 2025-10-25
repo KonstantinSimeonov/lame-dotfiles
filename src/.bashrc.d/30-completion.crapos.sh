@@ -2,8 +2,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 if [ -f /opt/homebrew/etc/profile.d/bash_completion.sh ]; then
+  # shellcheck source=/dev/null
   . /opt/homebrew/etc/profile.d/bash_completion.sh
 elif [ -f /usr/local/etc/profile.d/bash_completion.sh ]; then
+  # shellcheck source=/dev/null
   . /usr/local/etc/profile.d/bash_completion.sh
 fi
 
