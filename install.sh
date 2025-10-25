@@ -11,18 +11,17 @@ case $answer in
     exit;;
 esac
 
-rm ~/{.bashrc,.psqlrc,.gitconfig}
 
 declare dir
 dir="$(readlink -e "$(dirname "$0")")"
 
-declare -a files=(.bashrc .psqlrc .gitconfig)
-
-for f in "${files[@]}"; do
-  from="$dir/$f"
+for f in src/.*; do
+  f="$(basename "$f")"
+  rm -f "$HOME/$f"
+  from="$dir/src/$f"
   to="$HOME/$f"
   echo "symlinking $from to $to"
-  ln -s  "$from" "$to"
+  ln -s "$from" "$to"
 done
 
 echo "done"
