@@ -11,20 +11,29 @@ case $answer in
     exit;;
 esac
 
-
 declare dir
-dir="$(readlink -e "$(dirname "$0")")"
+dir="$(readlink -f "$(dirname "$0")")"
 
-for f in src/.*; do
-  f="$(basename "$f")"
-  rm -f "$HOME/$f"
-  from="$dir/src/$f"
-  to="$HOME/$f"
-  echo "symlinking $from to $to"
-  ln -s "$from" "$to"
-done
+install_dotfiles() {
+  for f in src/.*; do
+    f="$(basename "$f")"
+    rm -f "$HOME/$f"
+    from="$dir/src/$f"
+    to="$HOME/$f"
+    echo "symlinking $from to $to"
+    ln -s "$from" "$to"
+  done
+}
 
-mkdir -p ~/.config/zellij
-ln -s "$dir/config.kdl" ~/.config/zellij/config.kdl
+install_zellij_config() {
+  zellij_config="config.kdl"
+  zellij_config_dir="$HOME/.config/zellij"
+  mkdir -p "$zellij_config_dir"
+  rm -f "$zellij_config_dir/$zellij_config"
+  ln -s "$dir/$zellij_config" "$zellij_config_dir/$zellij_config"
+}
+
+install_dotfiles
+install_zellij_config
 
 echo "done"
