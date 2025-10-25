@@ -44,4 +44,17 @@ function __prompt() {
 PROMPT_COMMAND=__prompt
 
 source /usr/share/nvm/init-nvm.sh
-export AWS_PROFILE=admin
+
+# pnpm
+export PNPM_HOME="/home/kon/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+complete -C /usr/bin/terraform terraform
+
+if [ -f ~/.env ]; then
+  . ~/.env
+fi
