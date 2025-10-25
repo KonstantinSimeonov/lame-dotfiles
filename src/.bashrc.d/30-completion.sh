@@ -14,8 +14,6 @@ cached_completion() {
 
     local cache_file="$cache/$cmd-completion.bash"
 
-    echo "$cache_file"
-
     if [ ! -f "$cache_file" ]; then
       $cache_cmd > "$cache_file"
     fi
