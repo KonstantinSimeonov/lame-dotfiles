@@ -1,5 +1,3 @@
-echo "Konfig"
-
 alias vim=nvim
 alias ls='ls --color=auto -a'
 export EDITOR=nvim
