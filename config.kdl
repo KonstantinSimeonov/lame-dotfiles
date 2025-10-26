@@ -52,6 +52,21 @@ keybinds clear-defaults=true {
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "z" {
+          SwitchToMode "Resize";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          Resize "Increase";
+          SwitchToMode "Normal";
+        }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
