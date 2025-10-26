@@ -16,15 +16,5 @@ case "$(uname -s)" in
   *)        export _OS_TYPE=unknown;;
 esac
 
-export NVM_DIR="$HOME/.nvm"
-
-# linux
-# shellcheck source=/dev/null
-[ -s /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
-
-# crapos
-# shellcheck source=/dev/null
-[ -s /opt/homebrew/opt/nvm/nvm.sh ] && source /opt/homebrew/opt/nvm/nvm.sh
-
 # shellcheck source=src/.bashrc
-[[ $- == *i* ]] && source ~/.bashrc
+source ~/.bashrc
