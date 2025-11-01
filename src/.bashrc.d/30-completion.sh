@@ -26,3 +26,6 @@ cached_completion() {
 }
 
 cached_completion pnpm "pnpm completion bash"
+cached_completion bk "bk completion bash"
+cached_completion rustup "rustup completions bash"
+cached_completion lr "lr completion bash"
